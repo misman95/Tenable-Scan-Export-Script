@@ -30,8 +30,7 @@ if ($TokenResponse) {
         "Accept" = "*/*"
     }
     Write-Host "$(Get-Date –format 'yyyyMMdd_HHmmss')  Log in to Tenable.io......................................OK"
-}
-else { 
+} else { 
     Write-Host "$(Get-Date –format 'yyyyMMdd_HHmmss')  Log in Error. Please check username and password."
     Start-Sleep -s 20
     exit
