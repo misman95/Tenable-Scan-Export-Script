@@ -12,13 +12,6 @@ I've created this tool because it is not possible to automate exporting scan rep
   <li>Attached the report in the email message and send it to the recipients
 </ol>
 
-<H2>Requirements</H2>
-  <ul>
-    <li>Scan Names and Recipients List (CSV file)
-    <li>Your email password (encrypted in the text file)*
-  </ul>
- *Refer to https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.1 </br>
-  
 <H2>Notes</H2>
 <ul>
   <li>Author: misman95
