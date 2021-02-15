@@ -29,9 +29,9 @@ if ($TokenResponse) {
         "x-Cookie" = "token=" + $TokenResponse.token
         "Accept" = "*/*"
     }
-    Write-Host "$(Get-Date –format 'yyyyMMdd_HHmmss')  Log in to Tenable.io......................................OK"
+    Write-Host "Log in to Tenable.io......................................OK"
 } else { 
-    Write-Host "$(Get-Date –format 'yyyyMMdd_HHmmss')  Log in Error. Please check username and password."
+    Write-Host "Log in Error. Please check username and password."
     Start-Sleep -s 20
     exit
 }
@@ -55,7 +55,6 @@ foreach ($fileItem in $reportarray)
     $FileUri = "$ScansUri" + "/" + $Scanscompleted.id + "/export"
     $file = Invoke-RestMethod -Uri $FileUri -Headers $Header -Method $POSTMethod -ContentType $ContentType -Body $ExportBody   
     #---------------Create Status URI andn Download URI----------------------
-    $ScanName = $Scanscompleted.name
     $DownloadUri = "$ScansUri" + "/" + $Scanscompleted.id + "/export/" + $file.file + "/download?" + $file.temp_token
     $StatusUri = "$ScansUri" + "/" + $Scanscompleted.id + "/export/" + $file.file + "/status"
     
@@ -65,12 +64,12 @@ foreach ($fileItem in $reportarray)
          #----------------Download Report-------------------------------------------
         if ($result -eq "ready")
         {
-            Write-Host "$(Get-Date –format 'yyyyMMdd_HHmmss')  Export for $($fileItem.ScanName) is............. $($result)"
+            Write-Host "Export for $($fileItem.ScanName) is............. $($result)"
             Invoke-RestMethod -Uri $DownloadUri -ContentType $ContentType -Headers $Header -Method $GETMethod -OutFile "$($FilePath)$($fileitem.ScanName).pdf"                 
-            Write-Host "$(Get-Date –format 'yyyyMMdd_HHmmss')  Scans have been exported to $($FilePath) as $($fileItem.ScanName).pdf"
+            Write-Host "Scans have been exported to $($FilePath) as $($fileItem.ScanName).pdf"
             
         }else{
-            Write-Host "$(Get-Date –format 'yyyyMMdd_HHmmss')  Wait for another 15 seconds....."
+            Write-Host "Wait for another 15 seconds....."
             Start-Sleep -s 15
         }
     }
@@ -96,7 +95,7 @@ foreach ($fileItem in $reportarray)
     # Send the message
     Send-MailMessage @mailParams
 
-    Write-Host "$(Get-Date –format 'yyyyMMdd_HHmmss')  Completed exporting scan reports - $($fileitem.Scanname)."
+    Write-Host "Completed exporting scan reports - $($fileitem.Scanname)."
 
 }
 
