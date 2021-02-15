@@ -20,4 +20,4 @@ I've created this tool because it is not possible to automate exporting scan rep
 </ul>
 
 <H2>Kudos</H2>
-<p>Got many helps from: https://github.com/Pwd9000-ML/NessusV7-Report-Export-PowerShell/blob/master/NessusPro_v7_Report_Exporter_Tool.ps1 </p>
+<p>Got many helps from: https://github.com/Pwd9000-ML </p>
