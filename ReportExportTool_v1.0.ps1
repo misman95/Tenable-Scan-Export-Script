@@ -1,9 +1,8 @@
-﻿<# 
+<# 
 ScriptName: Tenable.io Report_Export_Tool.ps1
 PSVersion:  5.1
 Purpose:    Powershell script to generate Tenable scan report and email them to recipients.
 Created:    Feb 2021
-Comments:   based on https://github.com/Pwd9000-ML/NessusV7-Report-Export-PowerShell/blob/master/NessusPro_v7_Report_Exporter_Tool.ps1
 Author:     misman95
 Email:      misman95@gmail.com
 Github:          
@@ -35,7 +34,7 @@ if ($TokenResponse) {
 else { 
     Write-Host "$(Get-Date –format 'yyyyMMdd_HHmmss')  Log in Error. Please check username and password."
     Start-Sleep -s 20
-    Exit
+    exit
 }
 
 #------------------Set Report Format as PDF (Detailed)--------------------------------------------------------
@@ -79,16 +78,16 @@ foreach ($fileItem in $reportarray)
     While ($result -ne "ready")
 
     # Get the email credential
-    $User = "you@youremailadress"
+    $User = "you@example.com"
     $credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, (Get-Content $FilePath$SecureMailPassword | ConvertTo-SecureString)
 
     ## Define the Send-MailMessage parameters
     $mailParams = @{
-        SmtpServer                 = 'smtp.gmail.com'
+        SmtpServer                 = 'smtp.example.com'
         Port                       = '587' # or '25' if not using TLS
         UseSSL                     = $true # or not if using non-TLS
         Credential                 = $credential
-        From                       = 'nissan-vulnmgmt@dxc.com'
+        From                       = 'you@example.com'
         To                         = "$($fileItem.Recipients)"
         Subject                    = "Scan Report: $($fileitem.ScanName) - $(Get-Date -Format g)"
         Body                       = "Please see the scan report for $($fileitem.ScanName)"
