@@ -18,8 +18,7 @@ I've created this tool because it is not possible to automate exporting scan rep
     <li>Your email password (encrypted in the text file)*
   </ul>
  </br> 
- <B>How to encrypt your password</B>: 
- <code>(get-credential).password | ConvertFrom-SecureString | set-content " C:\temp\EmailPassword.txt" </code></br>
+ <B>*Refer to https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.1 </br>
   
 <H2>Notes</H2>
 <ul>
