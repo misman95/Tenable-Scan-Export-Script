@@ -17,8 +17,7 @@ I've created this tool because it is not possible to automate exporting scan rep
     <li>Scan Names and Recipients List (CSV file)
     <li>Your email password (encrypted in the text file)*
   </ul>
- </br> 
- <B>*Refer to https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.1 </br>
+ *Refer to https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.1 </br>
   
 <H2>Notes</H2>
 <ul>
