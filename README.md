@@ -9,7 +9,7 @@ I've created this tool because it is not possible to automate exporting scan rep
   <li>Set report format as PDF (detailed)
   <li>Send scan export request to Tenable.io
   <li>Check the export status and download if the report is ready
-  <li>Attached the report in the email message and send it to the recipients
+  <li>Attach the report in the email message and send it to the recipients
 </ol>
 
 <H2>Notes</H2>
