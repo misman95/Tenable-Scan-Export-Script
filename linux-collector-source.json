@@ -1,0 +1,14 @@
+{
+  "api.version":"v1",
+  "sources":[
+     {
+        "sourceType":"LocalFile",
+        "name":"accesslog",
+        "pathExpression":"/var/log/httpd/access_log"
+     },{
+        "sourceType":"LocalFile",
+        "name":"errorlog",
+        "pathExpression":"/var/log/httpd/error_log"
+     }
+  ]
+}
