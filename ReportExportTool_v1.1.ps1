@@ -1,4 +1,4 @@
-# 대외비 - 삼성, 한화
+# 대외비 - 삼성, 한화, 현대
 <# 
 ScriptName: Tenable.io Report_Export_Tool.ps1
 PSVersion:  5.1
