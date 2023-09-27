@@ -1,4 +1,4 @@
-# 대외비, 삼성  Hanwha
+# 대외비, 삼성,  Hanwha
 
 <# 
 ScriptName: Tenable.io Report_Export_Tool.ps1
